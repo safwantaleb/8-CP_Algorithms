@@ -1,0 +1,35 @@
+ALGORITHM sentence
+VAR
+    str : STRING;
+    i : INTEGER;
+    nbr_char , nbr_word , nbr_vow : INTEGER ;
+
+BEGIN
+    nbr_char := 0;
+    nbr_word := 0;
+    nbr_vow := 0;
+    
+    IF (str[str.length] <> ".") THEN
+        str := str + ".";
+    END_IF
+   
+    Read (str);
+
+    nbr_char := str.length ;         // y compris le . à la fin de la chaine de caractère 
+    nbr_word := 1;
+
+   FOR i FROM 0 TO str.length STEP 1  DO 
+       IF ( str[i] = 'a' OR str[i] = 'A' OR str[i] = 'e' OR str[i] = 'E' OR str[i] = 'i' OR str[i] = 'I' 
+           OR str[i] = 'o' OR str[i] = 'O' OR str[i] = 'y' OR str[i] = 'Y' OR str[i] = 'u' OR str[i] = 'U' ) THEN
+           nbr_vow := nbr_vow + 1;
+           
+           ELSE_IF ( str[i] = ' ')
+           nbr_word += 1;
+           
+       END_IF
+   END_FOR
+    
+    Write ("The nomber of character in the sentence is : " , nbr_char);
+    Write ("The nomber of word in the sentence is : " , nbr_word);
+    Write ("The nomber of vowels in the sentence is : " , nbr_vow);
+END
