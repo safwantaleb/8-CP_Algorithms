@@ -1,6 +1,6 @@
 ALGORITHM sentence
 VAR
-    str : STRING;
+    str : STRING[20];
     i : INTEGER;
     nbr_char , nbr_word , nbr_vow : INTEGER ;
 
